@@ -2,29 +2,29 @@
 
 <h1>Albums</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Description</th>
-      
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
 
-  <tbody>
     <% @albums.each do |album| %>
-      <tr>
-        <td><%=image_tag(album.image_url)%></td>
-        <td><%= album.description %></td>
-        <td><%= link_to 'Show', album %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+
+        <!-- start jumbo -->
+        <div class="jumbotron col-md-3" style="margin: 1px" >
+            <%=image_tag(album.image_url, class: 'img-thumbnail img-fluid') %>
+            <p class="lead">
+            Owner:  <%= album.user.name %>
+            </p>
+            <hr class="my-4">
+            <p>
+              <%= album.description %>
+            </p>
+        </div>
+    <!-- jumbo... -->
     <% end %>
-  </tbody>
-</table>
+</div>
+    
+      
+      
+      
+      
 
-<br>
-
-<%= link_to 'New Album', new_album_path %>
+ 
