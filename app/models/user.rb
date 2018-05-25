@@ -4,6 +4,8 @@ class User < ApplicationRecord
 
   mount_uploader :avtar, AvtarUploader
 
+  has_many :albums
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 end

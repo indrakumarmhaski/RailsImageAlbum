@@ -7,4 +7,8 @@ class PagesController < ApplicationController
 
   def about
   end
+
+  def myalbum
+    @albums = Album.where(user_id: current_user.id)
+  end
 end

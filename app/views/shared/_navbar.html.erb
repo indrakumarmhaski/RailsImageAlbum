@@ -13,11 +13,13 @@
         <%= link_to 'About', pages_about_path, class: 'nav-link active' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <%= link_to 'Albums', albums_path, class: 'nav-link active' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'My_Albums', pages_myalbum_path, class: 'nav-link active' %>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <% if current_user %>
           <%= link_to "LogOut",destroy_user_session_path, method: :delete, class: "btn btn-outline-success my-2 my-sm-0"%>   
       <% else %>
